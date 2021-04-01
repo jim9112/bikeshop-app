@@ -1,4 +1,5 @@
 import Head from 'next/head';
+import SignIn from '../components/SignIn';
 
 export default function Home() {
   return (
@@ -12,6 +13,9 @@ export default function Home() {
         <header>
           <h1 className="text-center">Bike Shop App</h1>
         </header>
+        <div>
+          <SignIn />
+        </div>
       </main>
     </div>
   );
