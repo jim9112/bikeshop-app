@@ -1,7 +1,7 @@
 const SignUp = () => {
   return (
     <>
-      <h1 className="text-center text-3xl">Sign In</h1>
+      <h1 className="text-center text-3xl">Sign Up</h1>
       <form
         className="grid grid-flow-row place-items-center pt-8 gap-4"
         action="">
@@ -24,7 +24,7 @@ const SignUp = () => {
           />
         </label>
         <label htmlFor="password2">
-          Password
+          Verify Password
           <input
             className="border border-black rounded-sm bg-lightGrey ml-4"
             type="password2"
