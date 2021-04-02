@@ -1,5 +1,6 @@
 import Head from 'next/head';
 import SignIn from '../components/SignIn';
+import SignInContainer from '../components/SignInContainer';
 
 export default function Home() {
   return (
@@ -13,9 +14,7 @@ export default function Home() {
         <header>
           <h1 className="text-center">Bike Shop App</h1>
         </header>
-        <div className="bg-white h-80 w-96 m-auto">
-          <SignIn />
-        </div>
+        <SignInContainer />
       </main>
     </div>
   );
