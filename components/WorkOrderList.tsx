@@ -1,6 +1,6 @@
 const WorkOrderList = () => {
   return (
-    <div className="bg-white">
+    <div className="bg-white container mx-auto">
       <header className="w-full grid grid-cols-5">
         <h2>Customer</h2>
         <h2>Recieved</h2>
