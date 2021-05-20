@@ -1,17 +1,25 @@
+import React from 'react';
+
 const SignUp = () => {
+  const onSubmit = (e: React.SyntheticEvent) => {
+    e.preventDefault();
+    console.log('Form Submitted');
+  };
+
   return (
     <>
       <h1 className="text-center text-3xl">Sign Up</h1>
       <form
         className="grid grid-flow-row place-items-center pt-8 gap-4"
-        action="">
+        action=""
+        onSubmit={onSubmit}>
         <label htmlFor="userName">
-          UserName
+          Email
           <input
             className="border border-black rounded-sm bg-lightGrey ml-4"
-            type="text"
-            id="userName"
-            name="userName"
+            type="email"
+            id="email"
+            name="email"
           />
         </label>
         <label htmlFor="password">
