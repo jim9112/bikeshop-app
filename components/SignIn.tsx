@@ -1,10 +1,19 @@
+import React from 'react';
+import useFormFields from '../lib/useFormFields';
+
 const SignIn = () => {
+  const { onChange, formData } = useFormFields();
+  const onSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    console.log(formData);
+  };
   return (
     <>
       <h1 className="text-center text-3xl">Sign In</h1>
       <form
         className="grid grid-flow-row place-items-center pt-8 gap-4"
-        action="">
+        action=""
+        onSubmit={onSubmit}>
         <label htmlFor="userName">
           UserName
           <input
@@ -12,6 +21,7 @@ const SignIn = () => {
             type="text"
             id="userName"
             name="userName"
+            onChange={onChange}
           />
         </label>
         <label htmlFor="password">
@@ -21,6 +31,7 @@ const SignIn = () => {
             type="password"
             id="password"
             name="password"
+            onChange={onChange}
           />
         </label>
         <button
