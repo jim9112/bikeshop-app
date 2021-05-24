@@ -1,23 +1,26 @@
-import React, { useState } from 'react';
 import useFormFields from '../lib/useFormFields';
+import { useRouter } from 'next/router';
 
 const SignUp = () => {
   const { onChange, formData }: any = useFormFields();
-  const onSubmit = (e: React.SyntheticEvent) => {
+  const router = useRouter();
+  const onSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     console.log(formData);
     if (formData.password === formData.password2) {
-      console.log('passwords match');
+      let element = e.target as HTMLFormElement;
+      element.reset();
+      router.push('/main');
+      console.log('form matches');
+    } else {
+      console.log('form does not match');
     }
   };
 
   return (
     <>
       <h1 className="text-center text-3xl">Sign Up</h1>
-      <form
-        className="grid grid-cols-2 pt-8 gap-4"
-        action=""
-        onSubmit={onSubmit}>
+      <form className="grid grid-cols-2 pt-8 gap-4" onSubmit={onSubmit}>
         <label htmlFor="userName">Email</label>
         <input
           className="border border-black rounded-sm bg-lightGrey ml-4"
