@@ -1,16 +1,13 @@
 import React, { useState } from 'react';
+import useFormFields from '../lib/useFormFields';
 
 const SignUp = () => {
-  const [formData, setFormData] = useState({});
+  const { onChange, formdata }: any = useFormFields();
   const onSubmit = (e: React.SyntheticEvent) => {
     e.preventDefault();
-    console.log('Form Submitted');
+    console.log(formdata);
   };
-  const onChange = (e: React.ChangeEvent) => {
-    let element = e.target as HTMLInputElement;
-    setFormData({ ...formData, [element.name]: element.value });
-    console.log(formData);
-  };
+
   return (
     <>
       <h1 className="text-center text-3xl">Sign Up</h1>
