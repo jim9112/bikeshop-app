@@ -1,11 +1,16 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 const SignUp = () => {
+  const [formData, setFormData] = useState({});
   const onSubmit = (e: React.SyntheticEvent) => {
     e.preventDefault();
     console.log('Form Submitted');
   };
-
+  const onChange = (e: React.ChangeEvent) => {
+    let element = e.target as HTMLInputElement;
+    setFormData({ ...formData, [element.name]: element.value });
+    console.log(formData);
+  };
   return (
     <>
       <h1 className="text-center text-3xl">Sign Up</h1>
@@ -20,6 +25,7 @@ const SignUp = () => {
             type="email"
             id="email"
             name="email"
+            onChange={onChange}
           />
         </label>
         <label htmlFor="password">
@@ -29,6 +35,7 @@ const SignUp = () => {
             type="password"
             id="password"
             name="password"
+            onChange={onChange}
           />
         </label>
         <label htmlFor="password2">
@@ -38,6 +45,7 @@ const SignUp = () => {
             type="password2"
             id="password2"
             name="password2"
+            onChange={onChange}
           />
         </label>
         <button
